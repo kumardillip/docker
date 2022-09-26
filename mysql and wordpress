@@ -1,0 +1,2 @@
+docker run --name mydb -d -e MYSQL_ROOT_PASSWORD=dillip mysql:5
+docker run --name wordpress -d -p 8888:80 --link mydb:mysql wordpress
