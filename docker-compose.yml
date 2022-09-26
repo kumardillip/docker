@@ -1,14 +1,20 @@
 ---
 version: '3.8'
 services:
-  mydb:
-   image: mysql
-   environment: 
-    - MYSQL_ROOT_PASSWORD=dillip
-  wordpress:
-   image: wordpress
+  myjenkins:
+   image: jenkins/jenkins
    ports:
-     - 8989:80
+     - 8989:8080
+  qaserver:
+   image: tomcat
+   ports:
+     - 8888:8080
    links:
-     - mydb:mysql
+     - myjenkins:jenkins
+  prodserver:
+   image: tomcat
+   ports:
+     - 7979:8080
+   links:
+     - myjenkins:jenkins
      
