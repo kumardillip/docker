@@ -1,0 +1,3 @@
+docker# docker run --name myjenkins -d -p 8989:8080 jenkins/jenkins
+docker# docker run --name qaserver -d -p 8070:8080 --link myjenkins:jenkins tomcat
+docker# docker run --name prod -d -p 6070:8080 --link myjenkins:jenkins tomcat
