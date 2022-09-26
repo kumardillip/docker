@@ -1,0 +1,3 @@
+docker run --name mydb -d -e MYSQL_ROOT_PASSWORD=dillip mysql 
+docker run --name apache -d -p 9999:80 --link mydb:mysql httpd
+docker run --name php -d --link mydb:mysql --link apache:httpd php:7.2-apache
