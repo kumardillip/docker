@@ -1,0 +1,1 @@
+docker run --name u1 -it ubuntu
