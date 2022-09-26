@@ -1,0 +1,3 @@
+docker run --name hub -d -p 4444:4444 selenium/hub
+docker run --name chrome -d -p 5901:5900 --link hub:selenium selenium/video
+docker run --name firefox -d -p 5202:5900 --link hub:selenium selenium/standalone-firefox
