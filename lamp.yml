@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.5"
 services:
  mydb:
   image: mysql
@@ -10,11 +10,11 @@ services:
    - 8989:80
   links:
    - mydb:httpd
-  php:
-   image: php:7.2- apache
-   links:
-    - mydb:mysql
-    - apache:httpd
+ php:
+  image: php:7.2- apache
+  links:
+   - mydb:mysql
+   - apache:httpd
 
 ...
   
