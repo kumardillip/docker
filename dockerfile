@@ -1,5 +1,4 @@
-FROM ubuntu
+FROM jenkins/jenkins
 MAINTAINER dillip
-COPY ./script.sh /
-RUN ./script.sh
+USER root
 
