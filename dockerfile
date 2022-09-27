@@ -1,4 +1,4 @@
-FROM jenkins/jenkins
+FROM centos
 MAINTAINER dillip
-USER root
+VOLUME /data
 
