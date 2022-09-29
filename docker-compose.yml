@@ -1,20 +1,16 @@
----
 version: '3.8'
 services:
-  myjenkins:
-   image: jenkins/jenkins
-   ports:
-     - 8989:8080
-  qaserver:
-   image: tomcat
-   ports:
-     - 8888:8080
-   links:
-     - myjenkins:jenkins
-  prodserver:
-   image: tomcat
-   ports:
-     - 7979:8080
-   links:
-     - myjenkins:jenkins
-     
+ db:
+  image: postgress
+  environment:
+   POSTGRES_PASSWORD: intelliqit
+   POSTGRES_USER: myuser
+   POSTGRESS_DB: mydb
+ adminer: 
+  image:
+  ports:
+   - 8989:8080
+networks:
+ default:
+  external:
+   name: intelliqit
